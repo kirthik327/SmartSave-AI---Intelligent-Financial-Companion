@@ -63,7 +63,7 @@
   {
     "_id": "db_ulocvn6ztj9",
     "createdAt": "2026-07-19T11:06:05.893Z",
-    "updatedAt": "2026-07-20T04:16:38.414Z",
+    "updatedAt": "2026-07-20T05:18:08.739Z",
     "name": "kirthik",
     "email": "kirthikofficial327@gmail.com",
     "password": "$2a$10$Ui1PX4tmp/3ip4zaBk5/M.upJIca/mEma0yR1JJ/gYDr/.tiI1E0O",
@@ -72,7 +72,7 @@
     "xp": 156,
     "level": 2,
     "streak": 2,
-    "lastActive": "2026-07-20T04:12:16.987Z",
+    "lastActive": "2026-07-20T05:18:08.738Z",
     "currency": "INR",
     "language": "en",
     "darkMode": true,
@@ -90,6 +90,12 @@
       "Spartan Saver"
     ],
     "deviceHistory": [
+      {
+        "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+        "ip": "::1",
+        "loginTime": "2026-07-20T05:18:08.738Z",
+        "location": "Delhi, India"
+      },
       {
         "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
         "ip": "::1",
