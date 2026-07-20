@@ -111,9 +111,7 @@ export const AuthProvider = ({ children }) => {
       await fetchSecurityData();
     } catch (err) {
       console.error('Error fetching user data', err);
-      if (err.message.includes('expired') || err.message.includes('token') || err.message.includes('denied')) {
-        logout();
-      }
+      logout();
     } finally {
       setLoading(false);
     }
