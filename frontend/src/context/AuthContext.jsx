@@ -2,6 +2,13 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
+class ApiError extends Error {
+  constructor(message, status) {
+    super(message);
+    this.status = status;
+  }
+}
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('smartsave_token'));
@@ -60,7 +67,7 @@ export const AuthProvider = ({ children }) => {
       const data = await response.json();
       
       if (!response.ok) {
-        throw new Error(data.message || 'Something went wrong');
+        throw new ApiError(data.message || 'Something went wrong', response.status);
       }
       return data;
     } catch (err) {
@@ -111,7 +118,10 @@ export const AuthProvider = ({ children }) => {
       await fetchSecurityData();
     } catch (err) {
       console.error('Error fetching user data', err);
-      logout();
+      // Only logout if unauthorized/forbidden, do not logout on server/network errors
+      if (err.status === 401 || err.status === 403) {
+        logout();
+      }
     } finally {
       setLoading(false);
     }
@@ -224,7 +234,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await apiRequest('/api/payments/webhook', 'POST', webhookData);
       
-      // Update local lists
       setGoals(prev => prev.map(g => g._id === webhookData.goalId ? { ...g, currentAmount: res.goal.currentAmount, completed: res.goal.completed } : g));
       
       const [summary, txsList, notificationsList] = await Promise.all([

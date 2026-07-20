@@ -184,7 +184,27 @@ seedDatabase();
 // --- API ROUTES ---
 
 // Health Check
-app.get('/api/health', (req, res) => res.json({ status: 'OK', message: 'SmartSave AI Engine is fully functional' }));
+app.get('/api/health', (req, res) => {
+  const isMongo = !!process.env.MONGODB_URI;
+  const dbState = isMongo ? mongoose.connection.readyState : 'local_json_mode';
+  const states = {
+    0: 'disconnected',
+    1: 'connected',
+    2: 'connecting',
+    3: 'disconnecting',
+    'local_json_mode': 'local_json'
+  };
+  
+  res.json({ 
+    status: 'OK', 
+    message: 'SmartSave AI Engine is fully functional',
+    database: {
+      mode: isMongo ? 'MongoDB Atlas' : 'Local JSON Fallback',
+      connectionStatus: states[dbState] || dbState,
+      readyState: isMongo ? mongoose.connection.readyState : 0
+    }
+  });
+});
 
 // Auth Routes
 app.post('/api/auth/signup', signup);
