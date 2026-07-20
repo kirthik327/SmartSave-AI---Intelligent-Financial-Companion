@@ -7,7 +7,7 @@
     "backend": "npm start --prefix backend",
     "frontend": "npm run dev --prefix frontend",
     "dev": "concurrently --kill-others \"npm run backend\" \"npm run frontend\"",
-    "build": "npm install --prefix frontend && npm run build --prefix frontend && cp -R frontend/dist dist",
+    "build": "bash build.sh",
     "start": "npm run dev"
   },
   "dependencies": {
