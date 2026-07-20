@@ -206,74 +206,74 @@ export const Dashboard = () => {
   });
 
   return (
-    <div className="flex-1 flex flex-col h-screen overflow-y-autoradial-bg p-6 lg:p-8 no-scrollbar bg-zinc-50 dark:bg-brand-bgDark text-zinc-950 dark:text-zinc-50">
+    <div className="flex-1 flex flex-col h-screen overflow-y-auto radial-bg p-4 md:p-6 lg:p-8 no-scrollbar bg-zinc-50 dark:bg-brand-bgDark text-zinc-950 dark:text-zinc-50">
       
       {/* Daily Motivation Banner */}
-      <div className="mb-8 p-4.5 rounded-2xl bg-brand-emerald/10 border border-brand-emerald/20 text-xs font-semibold flex items-center justify-between text-brand-emerald">
+      <div className="mb-6 p-4 rounded-2xl bg-brand-emerald/10 border border-brand-emerald/20 text-xs font-semibold flex items-center justify-between text-brand-emerald">
         <div className="flex items-center gap-3">
-          <Bookmark size={16} />
-          <span>"{dailyQuote.quote}" — <strong>{dailyQuote.author}</strong></span>
+          <Bookmark size={14} className="shrink-0" />
+          <span className="truncate max-w-[200px] sm:max-w-none">"{dailyQuote.quote}" — <strong>{dailyQuote.author}</strong></span>
         </div>
         <button 
           onClick={handleTogglePrivacy}
-          className="text-[10px] uppercase font-bold text-zinc-400 hover:text-brand-emerald flex items-center gap-1.5 cursor-pointer"
+          className="text-[9px] sm:text-[10px] uppercase font-bold text-zinc-400 hover:text-brand-emerald flex items-center gap-1.5 cursor-pointer shrink-0"
         >
           {user?.privacyMode ? <Eye size={12} /> : <EyeOff size={12} />}
-          <span>{user?.privacyMode ? 'Reveal Balance' : 'Privacy Mode'}</span>
+          <span>{user?.privacyMode ? 'Reveal' : 'Privacy'}</span>
         </button>
       </div>
 
       {/* Main KPI Row */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         {/* Balance KPI */}
-        <div className="p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between h-36">
+        <div className="p-4 md:p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between h-28 sm:h-36">
           <div className="flex items-center justify-between text-zinc-500">
-            <span className="text-xs font-bold uppercase tracking-wider">Available Cash</span>
-            <TrendingUp size={16} className="text-brand-emerald" />
+            <span className="text-[9px] md:text-xs font-bold uppercase tracking-wider">Available Cash</span>
+            <TrendingUp size={14} className="text-brand-emerald shrink-0" />
           </div>
           <div>
-            <h3 className="text-3xl font-extrabold tracking-tight mt-2">{displayVal(stats?.balance)}</h3>
-            <p className="text-[10px] text-zinc-400 mt-1 font-semibold">Allocated index deposits included</p>
+            <h3 className="text-base sm:text-2xl md:text-3xl font-extrabold tracking-tight mt-1 md:mt-2 truncate">{displayVal(stats?.balance)}</h3>
+            <p className="hidden sm:block text-[10px] text-zinc-400 mt-1 font-semibold">Allocated index deposits included</p>
           </div>
         </div>
 
         {/* Income KPI */}
-        <div className="p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between h-36">
+        <div className="p-4 md:p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between h-28 sm:h-36">
           <div className="flex items-center justify-between text-zinc-500">
-            <span className="text-xs font-bold uppercase tracking-wider">Income Log</span>
-            <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center text-brand-emerald">
+            <span className="text-[9px] md:text-xs font-bold uppercase tracking-wider">Income Log</span>
+            <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center text-brand-emerald shrink-0">
               <ArrowUpRight size={12} />
             </div>
           </div>
           <div>
-            <h3 className="text-3xl font-extrabold tracking-tight mt-2">{displayVal(stats?.income)}</h3>
-            <p className="text-[10px] text-zinc-400 mt-1 font-semibold">Active ledger streams</p>
+            <h3 className="text-base sm:text-2xl md:text-3xl font-extrabold tracking-tight mt-1 md:mt-2 truncate">{displayVal(stats?.income)}</h3>
+            <p className="hidden sm:block text-[10px] text-zinc-400 mt-1 font-semibold">Active ledger streams</p>
           </div>
         </div>
 
         {/* Expenses KPI */}
-        <div className="p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between h-36">
+        <div className="p-4 md:p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between h-28 sm:h-36">
           <div className="flex items-center justify-between text-zinc-500">
-            <span className="text-xs font-bold uppercase tracking-wider">Expenses</span>
-            <div className="w-5 h-5 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-500">
+            <span className="text-[9px] md:text-xs font-bold uppercase tracking-wider">Expenses</span>
+            <div className="w-5 h-5 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-500 shrink-0">
               <ArrowDownRight size={12} />
             </div>
           </div>
           <div>
-            <h3 className="text-3xl font-extrabold tracking-tight mt-2">{displayVal(stats?.expenses)}</h3>
-            <p className="text-[10px] text-zinc-400 mt-1 font-semibold">All card payments & bills</p>
+            <h3 className="text-base sm:text-2xl md:text-3xl font-extrabold tracking-tight mt-1 md:mt-2 truncate">{displayVal(stats?.expenses)}</h3>
+            <p className="hidden sm:block text-[10px] text-zinc-400 mt-1 font-semibold">All card payments & bills</p>
           </div>
         </div>
 
         {/* AI Health Score KPI */}
-        <div className="p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between h-36 relative overflow-hidden">
+        <div className="p-4 md:p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between h-28 sm:h-36 relative overflow-hidden">
           <div className="flex items-center justify-between text-zinc-500">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-purple">AI Financial Health</span>
-            <Sparkles size={16} className="text-brand-purple animate-spin" />
+            <span className="text-[9px] md:text-xs font-bold uppercase tracking-wider text-brand-purple">AI Health</span>
+            <Sparkles size={14} className="text-brand-purple animate-spin shrink-0" />
           </div>
           <div>
-            <h3 className="text-3xl font-extrabold tracking-tight mt-2 text-brand-purple">{stats?.aiScore || 75}/100</h3>
-            <p className="text-[10px] text-zinc-400 mt-1 font-semibold">Based on saving-to-expense ratios</p>
+            <h3 className="text-base sm:text-2xl md:text-3xl font-extrabold tracking-tight mt-1 md:mt-2 text-brand-purple truncate">{stats?.aiScore || 75}/100</h3>
+            <p className="hidden sm:block text-[10px] text-zinc-400 mt-1 font-semibold">Based on saving ratios</p>
           </div>
           <div className="absolute top-0 right-0 w-24 h-24 bg-brand-purple/5 rounded-full blur-xl"></div>
         </div>
@@ -286,7 +286,7 @@ export const Dashboard = () => {
         <div className="lg:col-span-2 flex flex-col gap-6">
           
           {/* Balance Trend Line chart */}
-          <div className="p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 h-80 flex flex-col">
+          <div className="p-4 md:p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 h-64 sm:h-80 flex flex-col">
             <h4 className="text-xs font-bold uppercase tracking-wider mb-4 text-zinc-400">Balance History Trend</h4>
             <div className="flex-1 w-full relative">
               <Line data={lineChartData} options={lineChartOptions} />
@@ -294,7 +294,7 @@ export const Dashboard = () => {
           </div>
 
           {/* Category distribution chart */}
-          <div className="p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 h-80 flex flex-col">
+          <div className="p-4 md:p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 h-64 sm:h-80 flex flex-col">
             <h4 className="text-xs font-bold uppercase tracking-wider mb-4 text-zinc-400">Expense Category Distribution</h4>
             <div className="flex-1 w-full relative">
               <Doughnut data={donutChartData} options={donutChartOptions} />

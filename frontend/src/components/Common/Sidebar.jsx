@@ -29,7 +29,7 @@ export const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-64 h-screen glassmorphism border-r border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between p-6 shrink-0">
+    <aside className="hidden md:flex w-64 h-screen glassmorphism border-r border-zinc-200/50 dark:border-brand-borderDark/50 flex flex-col justify-between p-6 shrink-0">
       {/* Brand Logo */}
       <div className="flex items-center gap-3 py-2">
         <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-emerald to-brand-blue flex items-center justify-center shadow-glow-green">

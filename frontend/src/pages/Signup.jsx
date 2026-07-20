@@ -55,7 +55,7 @@ export const Signup = () => {
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="w-full max-w-md p-8 rounded-3xl glassmorphism border border-brand-borderDark relative overflow-hidden"
+        className="w-full max-w-md p-6 sm:p-8 rounded-3xl glassmorphism border border-brand-borderDark relative overflow-hidden"
       >
         <div className="text-center mb-8">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-emerald to-brand-blue flex items-center justify-center shadow-glow-green mx-auto mb-4">

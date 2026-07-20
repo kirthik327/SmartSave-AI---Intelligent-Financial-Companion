@@ -27,27 +27,27 @@ export const Navbar = ({ onOpenCommandPalette }) => {
       {/* Search / Command Button */}
       <button 
         onClick={onOpenCommandPalette}
-        className="flex items-center gap-3 px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 dark:bg-brand-cardDark dark:hover:bg-zinc-800 border border-zinc-200/40 dark:border-brand-borderDark/40 text-sm text-zinc-500 w-64 text-left transition-all duration-200 cursor-pointer"
+        className="flex items-center gap-3 p-2.5 md:px-4 md:py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 dark:bg-brand-cardDark dark:hover:bg-zinc-800 border border-zinc-200/40 dark:border-brand-borderDark/40 text-sm text-zinc-500 w-11 h-11 md:w-64 text-left transition-all duration-200 cursor-pointer justify-center md:justify-start"
       >
-        <Search size={16} />
-        <span>Search actions... (Ctrl+K)</span>
+        <Search size={16} className="shrink-0" />
+        <span className="hidden md:inline">Search actions... (Ctrl+K)</span>
       </button>
 
       {/* Action Row */}
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-2 md:gap-5">
         {/* Streak Indicator */}
         {user && (
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-orange-100 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 font-semibold text-sm">
-            <Flame size={16} className="fill-orange-500 animate-pulse" />
-            <span>{user.streak || 1} Day Streak</span>
+          <div className="flex items-center gap-1 md:gap-1.5 px-2 md:px-3 py-1.5 rounded-full bg-orange-100 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 font-semibold text-xs md:text-sm">
+            <Flame size={14} className="fill-orange-500 animate-pulse shrink-0" />
+            <span>{user.streak || 1}<span className="hidden md:inline"> Day Streak</span></span>
           </div>
         )}
 
         {/* Level badge */}
         {user && (
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-100 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 font-semibold text-sm">
-            <Award size={16} />
-            <span>Lvl {user.level || 1}</span>
+          <div className="flex items-center gap-1 md:gap-1.5 px-2 md:px-3 py-1.5 rounded-full bg-purple-100 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 font-semibold text-xs md:text-sm">
+            <Award size={14} className="shrink-0" />
+            <span><span className="hidden md:inline">Lvl </span>{user.level || 1}</span>
           </div>
         )}
 
