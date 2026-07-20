@@ -1,0 +1,93 @@
+[
+  {
+    "_id": "db_j6moj63vlb",
+    "createdAt": "2026-07-19T10:57:20.389Z",
+    "updatedAt": "2026-07-19T10:57:20.389Z",
+    "userId": "db_1t2obhvaqjs",
+    "title": "MacBook Pro 16\"",
+    "targetAmount": 180000,
+    "currentAmount": 45000,
+    "deadline": "2026-11-16",
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400",
+    "category": "Gadget",
+    "completed": false,
+    "aiPrediction": {
+      "completionProbability": 75,
+      "smartSuggestion": "Save ₹1,125 daily to hit target by November.",
+      "motivationalQuote": "Stay focused."
+    }
+  },
+  {
+    "_id": "db_rfumvzflqze",
+    "createdAt": "2026-07-19T10:57:20.420Z",
+    "updatedAt": "2026-07-19T10:57:20.420Z",
+    "userId": "db_1t2obhvaqjs",
+    "title": "Europe Summer Trip",
+    "targetAmount": 250000,
+    "currentAmount": 185000,
+    "deadline": "2026-09-17",
+    "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400",
+    "category": "Vacation",
+    "completed": false,
+    "aiPrediction": {
+      "completionProbability": 92,
+      "smartSuggestion": "You are on track! An extra deposit of ₹500 weekly will seal it.",
+      "motivationalQuote": "The world awaits."
+    }
+  },
+  {
+    "_id": "db_hf378rexwg",
+    "createdAt": "2026-07-19T10:57:20.688Z",
+    "updatedAt": "2026-07-19T10:57:20.688Z",
+    "userId": "db_0x1zhle0hwos",
+    "title": "MacBook Pro 16\"",
+    "targetAmount": 180000,
+    "currentAmount": 45000,
+    "deadline": "2026-11-16",
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400",
+    "category": "Gadget",
+    "completed": false,
+    "aiPrediction": {
+      "completionProbability": 75,
+      "smartSuggestion": "Save ₹1,125 daily to hit target by November.",
+      "motivationalQuote": "Stay focused."
+    }
+  },
+  {
+    "_id": "db_dwjm1iifazj",
+    "createdAt": "2026-07-19T10:57:20.711Z",
+    "updatedAt": "2026-07-19T10:57:20.712Z",
+    "userId": "db_0x1zhle0hwos",
+    "title": "Europe Summer Trip",
+    "targetAmount": 250000,
+    "currentAmount": 185000,
+    "deadline": "2026-09-17",
+    "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400",
+    "category": "Vacation",
+    "completed": false,
+    "aiPrediction": {
+      "completionProbability": 92,
+      "smartSuggestion": "You are on track! An extra deposit of ₹500 weekly will seal it.",
+      "motivationalQuote": "The world awaits."
+    }
+  },
+  {
+    "_id": "db_0fqt79ip7zl",
+    "createdAt": "2026-07-19T11:25:08.335Z",
+    "updatedAt": "2026-07-20T04:13:21.655Z",
+    "userId": "db_ulocvn6ztj9",
+    "title": "bike",
+    "targetAmount": 200000,
+    "currentAmount": 10,
+    "deadline": "2029-12-10",
+    "image": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400",
+    "category": "Bike",
+    "completed": false,
+    "locked": false,
+    "aiPrediction": {
+      "completionProbability": 82,
+      "smartSuggestion": "To hit this by your deadline, try setting aside ₹162 daily. Skipping one premium purchase per week will speed this up by 12%.",
+      "motivationalQuote": "Every small rupee saved brings you one step closer to your dream."
+    }
+  }
+]

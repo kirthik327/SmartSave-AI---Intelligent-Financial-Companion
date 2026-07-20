@@ -1,0 +1,108 @@
+[
+  {
+    "_id": "db_1t2obhvaqjs",
+    "createdAt": "2026-07-19T10:57:20.226Z",
+    "updatedAt": "2026-07-19T10:57:20.226Z",
+    "name": "Kirthik Admin",
+    "email": "admin@smartsave.ai",
+    "password": "$2a$10$ayXLOtujAQ9v5nwTWh2FY.YFhY0TDJZo3XkR0nCmMLEuUTjqz6qiK",
+    "balance": 75000,
+    "savings": 15000,
+    "xp": 850,
+    "level": 9,
+    "streak": 12,
+    "lastActive": "2026-07-19T10:57:20.224Z",
+    "currency": "INR",
+    "darkMode": true,
+    "privacyMode": false,
+    "badges": [
+      "Level Explorer",
+      "Consistency King",
+      "Gemini Scholar"
+    ],
+    "notifications": {
+      "billReminders": true,
+      "goalReminders": true,
+      "savingAlerts": true,
+      "aiAlerts": true
+    },
+    "goalLockEnabled": true,
+    "emergencyWithdrawalDelay": 24,
+    "deviceHistory": [],
+    "isAdmin": true
+  },
+  {
+    "_id": "db_0x1zhle0hwos",
+    "createdAt": "2026-07-19T10:57:20.246Z",
+    "updatedAt": "2026-07-19T10:57:20.246Z",
+    "name": "Aishwarya Roy",
+    "email": "demo@smartsave.ai",
+    "password": "$2a$10$ayXLOtujAQ9v5nwTWh2FY.YFhY0TDJZo3XkR0nCmMLEuUTjqz6qiK",
+    "balance": 24500,
+    "savings": 5400,
+    "xp": 120,
+    "level": 2,
+    "streak": 4,
+    "lastActive": "2026-07-19T10:57:20.227Z",
+    "currency": "INR",
+    "darkMode": true,
+    "privacyMode": false,
+    "badges": [
+      "Level Explorer"
+    ],
+    "notifications": {
+      "billReminders": true,
+      "goalReminders": true,
+      "savingAlerts": true,
+      "aiAlerts": true
+    },
+    "goalLockEnabled": false,
+    "emergencyWithdrawalDelay": 12,
+    "deviceHistory": []
+  },
+  {
+    "_id": "db_ulocvn6ztj9",
+    "createdAt": "2026-07-19T11:06:05.893Z",
+    "updatedAt": "2026-07-20T04:16:38.414Z",
+    "name": "kirthik",
+    "email": "kirthikofficial327@gmail.com",
+    "password": "$2a$10$Ui1PX4tmp/3ip4zaBk5/M.upJIca/mEma0yR1JJ/gYDr/.tiI1E0O",
+    "balance": 9990,
+    "savings": 10,
+    "xp": 156,
+    "level": 2,
+    "streak": 2,
+    "lastActive": "2026-07-20T04:12:16.987Z",
+    "currency": "INR",
+    "language": "en",
+    "darkMode": true,
+    "privacyMode": false,
+    "notifications": {
+      "billReminders": true,
+      "goalReminders": true,
+      "savingAlerts": true,
+      "aiAlerts": true
+    },
+    "goalLockEnabled": false,
+    "emergencyWithdrawalDelay": 24,
+    "badges": [
+      "Level Explorer",
+      "Spartan Saver"
+    ],
+    "deviceHistory": [
+      {
+        "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+        "ip": "::1",
+        "loginTime": "2026-07-20T04:12:16.987Z",
+        "location": "Delhi, India"
+      },
+      {
+        "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+        "ip": "::1",
+        "loginTime": "2026-07-19T11:06:05.891Z"
+      }
+    ],
+    "failedAttempts": 0,
+    "lockoutUntil": null
+  }
+]

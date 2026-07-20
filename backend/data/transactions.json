@@ -1,0 +1,194 @@
+[
+  {
+    "_id": "db_tp0gtm4ttwi",
+    "createdAt": "2026-07-19T10:57:20.246Z",
+    "updatedAt": "2026-07-19T10:57:20.246Z",
+    "userId": "db_1t2obhvaqjs",
+    "title": "Salary Credit",
+    "amount": 35000,
+    "type": "income",
+    "category": "Salary",
+    "date": "2026-07-05T10:57:20.246Z"
+  },
+  {
+    "_id": "db_egrxsxmxot",
+    "createdAt": "2026-07-19T10:57:20.277Z",
+    "updatedAt": "2026-07-19T10:57:20.277Z",
+    "userId": "db_1t2obhvaqjs",
+    "title": "Apartment Rent",
+    "amount": 12000,
+    "type": "expense",
+    "category": "Housing",
+    "date": "2026-07-06T10:57:20.247Z"
+  },
+  {
+    "_id": "db_6fq88o2zfaa",
+    "createdAt": "2026-07-19T10:57:20.318Z",
+    "updatedAt": "2026-07-19T10:57:20.318Z",
+    "userId": "db_1t2obhvaqjs",
+    "title": "Organic Grocery shopping",
+    "amount": 2400,
+    "type": "expense",
+    "category": "Food",
+    "date": "2026-07-09T10:57:20.278Z"
+  },
+  {
+    "_id": "db_heyfe8d0r14",
+    "createdAt": "2026-07-19T10:57:20.343Z",
+    "updatedAt": "2026-07-19T10:57:20.343Z",
+    "userId": "db_1t2obhvaqjs",
+    "title": "Freelance UI Project",
+    "amount": 8000,
+    "type": "income",
+    "category": "Freelance",
+    "date": "2026-07-11T10:57:20.319Z"
+  },
+  {
+    "_id": "db_4fxz8b37fnv",
+    "createdAt": "2026-07-19T10:57:20.373Z",
+    "updatedAt": "2026-07-19T10:57:20.373Z",
+    "userId": "db_1t2obhvaqjs",
+    "title": "Electric Bill Payment",
+    "amount": 1800,
+    "type": "expense",
+    "category": "Utilities",
+    "date": "2026-07-13T10:57:20.343Z"
+  },
+  {
+    "_id": "db_sqzgzgruavi",
+    "createdAt": "2026-07-19T10:57:20.386Z",
+    "updatedAt": "2026-07-19T10:57:20.386Z",
+    "userId": "db_1t2obhvaqjs",
+    "title": "Premium Gym Membership",
+    "amount": 3500,
+    "type": "expense",
+    "category": "Health",
+    "date": "2026-07-14T10:57:20.374Z"
+  },
+  {
+    "_id": "db_8lbqu6esefe",
+    "createdAt": "2026-07-19T10:57:20.388Z",
+    "updatedAt": "2026-07-19T10:57:20.388Z",
+    "userId": "db_1t2obhvaqjs",
+    "title": "Dinner with friends",
+    "amount": 1450,
+    "type": "expense",
+    "category": "Dining Out",
+    "date": "2026-07-17T10:57:20.386Z"
+  },
+  {
+    "_id": "db_vw0l1zuyz7",
+    "createdAt": "2026-07-19T10:57:20.506Z",
+    "updatedAt": "2026-07-19T10:57:20.506Z",
+    "userId": "db_0x1zhle0hwos",
+    "title": "Salary Credit",
+    "amount": 35000,
+    "type": "income",
+    "category": "Salary",
+    "date": "2026-07-05T10:57:20.478Z"
+  },
+  {
+    "_id": "db_3haq4ebje1l",
+    "createdAt": "2026-07-19T10:57:20.523Z",
+    "updatedAt": "2026-07-19T10:57:20.523Z",
+    "userId": "db_0x1zhle0hwos",
+    "title": "Apartment Rent",
+    "amount": 12000,
+    "type": "expense",
+    "category": "Housing",
+    "date": "2026-07-06T10:57:20.506Z"
+  },
+  {
+    "_id": "db_pd70quorynj",
+    "createdAt": "2026-07-19T10:57:20.539Z",
+    "updatedAt": "2026-07-19T10:57:20.539Z",
+    "userId": "db_0x1zhle0hwos",
+    "title": "Organic Grocery shopping",
+    "amount": 2400,
+    "type": "expense",
+    "category": "Food",
+    "date": "2026-07-09T10:57:20.524Z"
+  },
+  {
+    "_id": "db_wpil9pbu8ng",
+    "createdAt": "2026-07-19T10:57:20.570Z",
+    "updatedAt": "2026-07-19T10:57:20.570Z",
+    "userId": "db_0x1zhle0hwos",
+    "title": "Freelance UI Project",
+    "amount": 8000,
+    "type": "income",
+    "category": "Freelance",
+    "date": "2026-07-11T10:57:20.540Z"
+  },
+  {
+    "_id": "db_yc44wwsi12",
+    "createdAt": "2026-07-19T10:57:20.599Z",
+    "updatedAt": "2026-07-19T10:57:20.599Z",
+    "userId": "db_0x1zhle0hwos",
+    "title": "Electric Bill Payment",
+    "amount": 1800,
+    "type": "expense",
+    "category": "Utilities",
+    "date": "2026-07-13T10:57:20.570Z"
+  },
+  {
+    "_id": "db_q4vcs3gv3nh",
+    "createdAt": "2026-07-19T10:57:20.634Z",
+    "updatedAt": "2026-07-19T10:57:20.634Z",
+    "userId": "db_0x1zhle0hwos",
+    "title": "Premium Gym Membership",
+    "amount": 3500,
+    "type": "expense",
+    "category": "Health",
+    "date": "2026-07-14T10:57:20.600Z"
+  },
+  {
+    "_id": "db_96xsnorc92p",
+    "createdAt": "2026-07-19T10:57:20.664Z",
+    "updatedAt": "2026-07-19T10:57:20.664Z",
+    "userId": "db_0x1zhle0hwos",
+    "title": "Dinner with friends",
+    "amount": 1450,
+    "type": "expense",
+    "category": "Dining Out",
+    "date": "2026-07-17T10:57:20.634Z"
+  },
+  {
+    "_id": "db_jo2r4pr4a4p",
+    "createdAt": "2026-07-19T11:25:28.042Z",
+    "updatedAt": "2026-07-19T11:25:28.042Z",
+    "userId": "db_ulocvn6ztj9",
+    "title": "Saved for: bike",
+    "amount": 100,
+    "type": "save",
+    "category": "Bike",
+    "date": "2026-07-19T11:25:28.041Z"
+  },
+  {
+    "_id": "db_gi5situ71mb",
+    "createdAt": "2026-07-19T11:25:48.982Z",
+    "updatedAt": "2026-07-19T11:25:48.982Z",
+    "userId": "db_ulocvn6ztj9",
+    "title": "Withdrew from: bike",
+    "amount": 100,
+    "type": "withdraw",
+    "category": "Bike",
+    "date": "2026-07-19T11:25:48.981Z"
+  },
+  {
+    "_id": "db_jpszbf15eje",
+    "createdAt": "2026-07-20T04:13:21.659Z",
+    "updatedAt": "2026-07-20T04:13:21.659Z",
+    "userId": "db_ulocvn6ztj9",
+    "title": "Gateway Saved for: bike",
+    "amount": 10,
+    "type": "save",
+    "category": "Bike",
+    "date": "2026-07-20T04:13:21.658Z",
+    "metadata": {
+      "orderId": "order_ajddeym57x",
+      "paymentId": "pay_4w99fpve00",
+      "processor": "Razorpay UPI"
+    }
+  }
+]

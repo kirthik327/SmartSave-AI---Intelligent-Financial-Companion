@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "db_eox3x23kf1",
+    "createdAt": "2026-07-20T04:13:21.660Z",
+    "updatedAt": "2026-07-20T04:13:21.660Z",
+    "userId": "db_ulocvn6ztj9",
+    "title": "UPI Deposit Success 💳",
+    "body": "Successfully deposited ₹10 to \"bike\" via GPay. Ref: pay_4w99fpve00",
+    "type": "achievement",
+    "read": false
+  },
+  {
+    "_id": "db_jx8cn82sour",
+    "createdAt": "2026-07-20T04:16:33.511Z",
+    "updatedAt": "2026-07-20T04:16:33.511Z",
+    "userId": "db_ulocvn6ztj9",
+    "title": "Challenge Completed! 🏆",
+    "body": "You unlocked the reward for \"Save ₹50 Daily\" and gained 15 XP.",
+    "type": "achievement",
+    "read": false
+  },
+  {
+    "_id": "db_t44rxw0gx3",
+    "createdAt": "2026-07-20T04:16:36.978Z",
+    "updatedAt": "2026-07-20T04:16:36.978Z",
+    "userId": "db_ulocvn6ztj9",
+    "title": "Challenge Completed! 🏆",
+    "body": "You unlocked the reward for \"Coffee Challenge\" and gained 30 XP.",
+    "type": "achievement",
+    "read": false
+  },
+  {
+    "_id": "db_f5mx9frj42d",
+    "createdAt": "2026-07-20T04:16:38.417Z",
+    "updatedAt": "2026-07-20T04:16:38.417Z",
+    "userId": "db_ulocvn6ztj9",
+    "title": "Challenge Completed! 🏆",
+    "body": "You unlocked the reward for \"No Shopping Week\" and gained 100 XP.",
+    "type": "achievement",
+    "read": false
+  }
+]
