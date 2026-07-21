@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, NavLink } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { Sidebar } from './components/Common/Sidebar';
 import { Navbar } from './components/Common/Navbar';
 import { CommandPalette } from './components/Common/CommandPalette';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
+import { 
+  LayoutDashboard, 
+  Target, 
+  Sparkles, 
+  ShieldCheck, 
+  Trophy, 
+  Image as ImageIcon, 
+  BarChart3, 
+  Settings as SettingsIcon 
+} from 'lucide-react';
 
 // Page Imports
 import { Landing } from './pages/Landing';
@@ -89,7 +99,7 @@ const AppLayout = ({ children }) => {
     { name: 'Challenges', path: '/challenges', icon: Trophy },
     { name: 'Dream Board', path: '/dream-board', icon: ImageIcon },
     { name: 'Reports', path: '/reports', icon: BarChart3 },
-    { name: 'Settings', path: '/settings', icon: Settings },
+    { name: 'Settings', path: '/settings', icon: SettingsIcon },
   ];
 
   return (

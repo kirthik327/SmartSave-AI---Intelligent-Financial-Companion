@@ -288,8 +288,15 @@ export const Dashboard = () => {
           {/* Balance Trend Line chart */}
           <div className="p-4 md:p-6 rounded-2xl glassmorphism border border-zinc-200/50 dark:border-brand-borderDark/50 h-64 sm:h-80 flex flex-col">
             <h4 className="text-xs font-bold uppercase tracking-wider mb-4 text-zinc-400">Balance History Trend</h4>
-            <div className="flex-1 w-full relative">
-              <Line data={lineChartData} options={lineChartOptions} />
+            <div className="flex-1 w-full relative flex items-center justify-center">
+              {recentTxsReverse.length > 0 ? (
+                <Line data={lineChartData} options={lineChartOptions} />
+              ) : (
+                <div className="text-zinc-500 text-xs font-semibold flex flex-col items-center gap-2 text-center p-4">
+                  <TrendingUp size={28} className="text-zinc-600 animate-pulse" />
+                  <span>No transactions logged yet. Start saving to see your balance trend!</span>
+                </div>
+              )}
             </div>
           </div>
 
