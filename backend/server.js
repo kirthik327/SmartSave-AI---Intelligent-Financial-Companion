@@ -50,10 +50,18 @@ app.use('/api', limiter);
 const seedDatabase = async () => {
   try {
     const demoExists = await db.users.findOne({ email: 'demo@smartsave.ai' });
-    if (!demoExists) {
-      console.log('Seeding mock sandbox users with cyber security details...');
-      import('bcryptjs').then(async (bcrypt) => {
-        const hash = await bcrypt.default.hash('Password123', 10);
+    const adminExists = await db.users.findOne({ email: 'admin@smartsave.ai' });
+    
+    import('bcryptjs').then(async (bcrypt) => {
+      const hash = await bcrypt.default.hash('Password123', 10);
+      
+      if (demoExists && adminExists) {
+        // Enforce default password matching to prevent lockouts
+        await db.users.findByIdAndUpdate(demoExists._id, { password: hash });
+        await db.users.findByIdAndUpdate(adminExists._id, { password: hash });
+        console.log('Sandbox password credentials synced and updated successfully.');
+      } else {
+        console.log('Seeding mock sandbox users with cyber security details...');
         const adminUser = await db.users.create({
           name: 'Kirthik Admin',
           email: 'admin@smartsave.ai',
@@ -110,16 +118,19 @@ const seedDatabase = async () => {
           ]
         });
 
+        // Seed logs
         await db.logs.create({
           type: 'SECURITY_ALERT',
-          message: 'Intrusion Detection Shield: Anti-XSS Sanitizer active.',
-          createdAt: new Date(Date.now() - 200 * 60000).toISOString()
+          message: 'Failed login attempt: unrecognized device fingerprint for user admin@smartsave.ai',
+          createdAt: new Date(Date.now() - 5 * 24 * 60 * 60000).toISOString()
         });
+
         await db.logs.create({
           type: 'SECURITY_ALERT',
-          message: 'Rate Limiter active: DDoS Protection filter engaged.',
-          createdAt: new Date(Date.now() - 150 * 60000).toISOString()
+          message: 'MFA configuration modified: WebAuthn authenticator key registered.',
+          createdAt: new Date(Date.now() - 3 * 24 * 60 * 60000).toISOString()
         });
+
         await db.logs.create({
           type: 'SECURITY_ALERT',
           message: 'Impossible Travel detected for admin@smartsave.ai: login from Delhi 10 minutes after Mumbai session.',
@@ -173,8 +184,8 @@ const seedDatabase = async () => {
           });
         }
         console.log('Seeding completed successfully!');
-      });
-    }
+      }
+    });
   } catch (error) {
     console.error('Error seeding database', error);
   }
