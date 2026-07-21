@@ -38,6 +38,44 @@ const AppLayout = ({ children }) => {
   const [isOpenCP, setIsOpenCP] = useState(false);
   const location = useLocation();
 
+  const [debugErrors, setDebugErrors] = useState(() => {
+    try {
+      return JSON.parse(sessionStorage.getItem('smartsave_debug_errors') || '[]');
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    const handleError = (event) => {
+      const errStr = `Error: ${event.message}`;
+      setDebugErrors(prev => {
+        if (prev.includes(errStr)) return prev;
+        const next = [...prev.slice(-3), errStr];
+        sessionStorage.setItem('smartsave_debug_errors', JSON.stringify(next));
+        return next;
+      });
+    };
+
+    const handleRejection = (event) => {
+      const reason = event.reason;
+      const errStr = `API Failure: ${reason?.message || reason || 'Network rejection'}`;
+      setDebugErrors(prev => {
+        if (prev.includes(errStr)) return prev;
+        const next = [...prev.slice(-3), errStr];
+        sessionStorage.setItem('smartsave_debug_errors', JSON.stringify(next));
+        return next;
+      });
+    };
+
+    window.addEventListener('error', handleError);
+    window.addEventListener('unhandledrejection', handleRejection);
+    return () => {
+      window.removeEventListener('error', handleError);
+      window.removeEventListener('unhandledrejection', handleRejection);
+    };
+  }, []);
+
   const handleTogglePrivacyMode = async () => {
     if (!user) return;
     try {
@@ -74,14 +112,34 @@ const AppLayout = ({ children }) => {
 
   if (isStandalone) {
     return (
-      <>
+      <div className="relative min-h-screen">
+        {debugErrors.length > 0 && (
+          <div className="fixed top-4 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-md p-4 rounded-2xl bg-rose-950/90 border border-rose-500/30 text-rose-200 text-xs font-semibold backdrop-blur-xl shadow-2xl flex flex-col gap-2">
+            <div className="flex justify-between items-center border-b border-rose-500/20 pb-1.5 font-bold uppercase tracking-wider text-[10px] text-rose-400">
+              <span>⚠️ Console Telemetry Debugger</span>
+              <button 
+                onClick={() => { setDebugErrors([]); sessionStorage.removeItem('smartsave_debug_errors'); }}
+                className="px-2 py-0.5 rounded bg-rose-500/20 hover:bg-rose-500/40 text-[9px] uppercase cursor-pointer"
+              >
+                Clear
+              </button>
+            </div>
+            <div className="flex flex-col gap-1 max-h-32 overflow-y-auto">
+              {debugErrors.map((err, idx) => (
+                <div key={idx} className="font-mono text-[10px] break-all leading-normal">
+                  • {err}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         {children}
         <CommandPalette 
           isOpen={isOpenCP} 
           onClose={() => setIsOpenCP(false)} 
           onTogglePrivacyMode={handleTogglePrivacyMode}
         />
-      </>
+      </div>
     );
   }
 
