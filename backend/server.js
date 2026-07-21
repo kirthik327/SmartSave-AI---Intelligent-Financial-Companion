@@ -49,8 +49,8 @@ app.use('/api', limiter);
 
 const seedDatabase = async () => {
   try {
-    const users = await db.users.find();
-    if (users.length === 0) {
+    const demoExists = await db.users.findOne({ email: 'demo@smartsave.ai' });
+    if (!demoExists) {
       console.log('Seeding mock sandbox users with cyber security details...');
       import('bcryptjs').then(async (bcrypt) => {
         const hash = await bcrypt.default.hash('Password123', 10);
@@ -185,7 +185,7 @@ seedDatabase();
 // --- API ROUTES ---
 
 // Health Check
-app.get('/api/health', (req, res) => {
+app.get('/api/health', async (req, res) => {
   const isMongo = !!process.env.MONGODB_URI;
   const dbState = isMongo ? mongoose.connection.readyState : 'local_json_mode';
   const states = {
@@ -196,13 +196,28 @@ app.get('/api/health', (req, res) => {
     'local_json_mode': 'local_json'
   };
   
+  let userCount = 0;
+  let demoExists = false;
+  
+  if (isMongo) {
+    try {
+      const usersList = await db.users.find();
+      userCount = usersList.length;
+      demoExists = usersList.some(u => u.email === 'demo@smartsave.ai');
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   res.json({ 
     status: 'OK', 
     message: 'SmartSave AI Engine is fully functional',
     database: {
       mode: isMongo ? 'MongoDB Atlas' : 'Local JSON Fallback',
       connectionStatus: states[dbState] || dbState,
-      readyState: isMongo ? mongoose.connection.readyState : 0
+      readyState: isMongo ? mongoose.connection.readyState : 0,
+      userCount,
+      demoExists
     }
   });
 });
