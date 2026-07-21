@@ -15,6 +15,7 @@ import {
   BarChart3, 
   Settings as SettingsIcon 
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Page Imports
 import { Landing } from './pages/Landing';
