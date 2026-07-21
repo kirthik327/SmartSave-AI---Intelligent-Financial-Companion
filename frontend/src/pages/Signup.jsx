@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
-import { User, Mail, Lock, ShieldCheck, ArrowRight } from 'lucide-react';
+import { User, Mail, Lock, ShieldCheck, ArrowRight, Eye, EyeOff } from 'lucide-react';
 
 export const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [localError, setLocalError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -32,13 +35,20 @@ export const Signup = () => {
     e.preventDefault();
     setLocalError('');
 
+    if (password !== confirmPassword) {
+      return setLocalError('Passwords do not match. Please verify your entries.');
+    }
+
     if (strengthScore < 2) {
       return setLocalError('Password is too weak. Please include at least 8 characters and numbers.');
     }
 
     setLoading(true);
+    const cleanName = name.trim();
+    const cleanEmail = email.trim().toLowerCase();
+    const cleanPassword = password.trim();
     try {
-      await signup(name, email, password);
+      await signup(cleanName, cleanEmail, cleanPassword);
       // Take to onboarding flow first!
       navigate('/onboarding');
     } catch (err) {
@@ -107,13 +117,20 @@ export const Signup = () => {
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" size={16} />
               <input 
-                type="password" 
+                type={showPassword ? "text" : "password"} 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="At least 8 chars"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-cardDark border border-zinc-800 text-sm outline-none text-zinc-200 focus:border-brand-emerald transition-all"
+                className="w-full pl-10 pr-10 py-3 rounded-xl bg-brand-cardDark border border-zinc-800 text-sm outline-none text-zinc-200 focus:border-brand-emerald transition-all"
                 required
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300 cursor-pointer"
+              >
+                {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+              </button>
             </div>
 
             {/* Password strength meter */}
@@ -139,6 +156,28 @@ export const Signup = () => {
                 </div>
               </div>
             )}
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase">Confirm Password</label>
+            <div className="relative">
+              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" size={16} />
+              <input 
+                type={showConfirmPassword ? "text" : "password"} 
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Repeat password"
+                className="w-full pl-10 pr-10 py-3 rounded-xl bg-brand-cardDark border border-zinc-800 text-sm outline-none text-zinc-200 focus:border-brand-emerald transition-all"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300 cursor-pointer"
+              >
+                {showConfirmPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+              </button>
+            </div>
           </div>
 
           <button 
