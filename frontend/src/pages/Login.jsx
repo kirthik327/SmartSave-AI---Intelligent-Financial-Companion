@@ -41,20 +41,23 @@ export const Login = () => {
     setLocalError('');
     setLoading(true);
 
+    const cleanEmail = email.trim().toLowerCase();
+    const cleanPassword = password.trim();
+
     try {
       if (mfaRequired) {
         // Complete second factor authentication step
-        await login(email, password, null, mfaCode);
+        await login(cleanEmail, cleanPassword, null, mfaCode);
         navigate('/dashboard');
       } else if (useOtp) {
-        const res = await login(email, null, otpCode);
+        const res = await login(cleanEmail, null, otpCode);
         if (res?.mfaRequired) {
           setMfaRequired(true);
         } else {
           navigate('/dashboard');
         }
       } else {
-        const res = await login(email, password);
+        const res = await login(cleanEmail, cleanPassword);
         if (res?.mfaRequired) {
           setMfaRequired(true);
         } else {
