@@ -37,6 +37,7 @@ const AppLayout = ({ children }) => {
   const { user, loading, updateProfileSettings } = useAuth();
   const [isOpenCP, setIsOpenCP] = useState(false);
   const location = useLocation();
+  const [showMoreMenu, setShowMoreMenu] = useState(false);
 
   const [debugErrors, setDebugErrors] = useState(() => {
     try {
@@ -143,8 +144,7 @@ const AppLayout = ({ children }) => {
     );
   }
 
-  // Mobile Drawer State
-  const [showMoreMenu, setShowMoreMenu] = useState(false);
+
 
   const mobileNavItems = [
     { name: 'Home', path: '/dashboard', icon: LayoutDashboard },
